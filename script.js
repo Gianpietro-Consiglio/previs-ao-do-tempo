@@ -50,11 +50,21 @@ async function checkWeather(){
             case 'neblina':
                 cloud_div.src='http://openweathermap.org/img/wn/50d@2x.png'
                 break
+            case 'chuva leve':
+                cloud_div.src='http://openweathermap.org/img/wn/10d@2x.png'   
+                break 
+            case 'neve':
+                cloud_div.src='http://openweathermap.org/img/wn/13d@2x.png'
+                break
+                
 
         }
+        let graus = Number(data.main.temp)
+        graus = graus.toFixed(1)
+
         document.getElementById('cidade').value=''
         document.getElementById('city').innerHTML = data.name
-        document.getElementById('temperature').innerHTML = `${data.main.temp}°C`;
+        document.getElementById('temperature').innerHTML = `${graus}°C`;
         document.getElementById('humidity').innerHTML = `${data.main.humidity}%`;
         document.getElementById('wind').innerHTML = `${data.wind.speed}Km/h`;
         document.getElementById('description').innerHTML = `${cloud}`
