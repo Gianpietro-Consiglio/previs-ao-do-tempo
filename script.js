@@ -56,6 +56,15 @@ async function checkWeather(){
             case 'neve':
                 cloud_div.src='http://openweathermap.org/img/wn/13d@2x.png'
                 break
+            case 'chuva moderada':
+                cloud_div.src='http://openweathermap.org/img/wn/09d@2x.png'   
+                break
+            case 'fumaça':
+                cloud.div.src='http://openweathermap.org/img/wn/50d@2x.png'
+                break
+            case 'trovoada com chuva fraca':
+                cloud.div.src='http://openweathermap.org/img/wn/11d@2x.png'      
+                break  
                 
 
         }
@@ -88,6 +97,9 @@ async function checkWeather(){
 function clean(){
     div_weather_data.style.display='none'
     cloud_div.style.display='none'
+    document.getElementById('error_mensagem').innerHTML = ''
+    document.getElementById('cidade').value = ''
+
     
 }
 
